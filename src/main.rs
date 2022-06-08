@@ -3,8 +3,8 @@ extern crate termion;
 
 use termion::{color, style};
 
-const WIDTH:i32 = 50;
-const HEIGHT:i32 = 30;
+const WIDTH:i32 = 60;
+const HEIGHT:i32 = 50;
 fn main() {
 
     let mut points:[u8;(WIDTH*HEIGHT * 2) as usize] = [0;(WIDTH*HEIGHT * 2) as usize];
@@ -56,7 +56,7 @@ fn main() {
             print!("|| ");
             for j in 0..WIDTH{
                 if points[(i*WIDTH+j) as usize] == 1{
-                    print!("{}{}{} ",color::Fg(color::LightCyan),style::Bold,points[(i*WIDTH+j)as usize]);
+                    print!("{}{}{} ",color::Fg(color::LightMagenta),style::Bold,points[(i*WIDTH+j)as usize]);
                 }
                 else{
                     print!("{}{}{} ",color::Fg(color::White),style::Bold,points[(i*WIDTH+j)as usize]);
@@ -68,7 +68,7 @@ fn main() {
             print!("=");
         }
         println!();
-        println!("Do you want to add a point? [type anytching to cancel]");
+        println!("Do you want to add a point? [type anytching and enter to cancel]");
         let mut line = String::new();
         let b1 = std::io::stdin().read_line(&mut line).unwrap();
         // std::io::stdin().read_line(&mut line).unwrap();
@@ -138,7 +138,7 @@ fn main() {
             print!("|| ");
             for j in 0..WIDTH{
                 if points[(i*WIDTH+j) as usize] == 1{
-                    print!("{}{}{} ",color::Fg(color::LightCyan),style::Bold,points[(i*WIDTH+j)as usize]);
+                    print!("{}{}{} ",color::Fg(color::LightMagenta),style::Bold,points[(i*WIDTH+j)as usize]);
                 }
                 else{
                     print!("{}{}{} ",color::Fg(color::White),style::Bold,points[(i*WIDTH+j)as usize]);
